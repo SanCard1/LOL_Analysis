@@ -157,7 +157,7 @@
 
                     <td>Nominal</td>
 
-                    <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                    <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
                 </tr>
 
@@ -167,7 +167,7 @@
 
                     <td>Ordinal</td>
 
-                    <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                    <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
                 </tr>
 
@@ -177,7 +177,7 @@
 
                     <td>Categorical</td>
 
-                    <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                    <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
                 </tr>
 
@@ -187,7 +187,7 @@
 
                     <td>Ordinal</td>
 
-                    <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                    <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
                 </tr>
 
