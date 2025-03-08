@@ -4,6 +4,7 @@
         <h1>League of Legends Analysis: Race to the Nexus</h1>
         <h3>by Santiago Cardenas Rey and Michael Luo</h3>
 
+        <section>
             <h5>Step 1: Description</h5>
             <p>We chose the league of legends dataset for this project because it provides a rich and dynamic set of variables that allow for meaningful hypothesis testing and predictive modeling. The dataset includes key performance metrics such as damage per minute, kills, assists, deaths, and game results which enable various statistical analyses. Unlike structured datasets like recipes or power outages, this dataset introduces human decision-making and variability, making the analysis more complex and engaging. Since I have an interest in gaming and data-driven insights, working with this dataset makes the project both enjoyable and intellectually stimulating. Fellow gamers may relate to what we are assessing to best determine the performance of players based on what kind of player they are or come across (i.e. ADC bot or mid-lane player). League of Legends (LoL) is a highly competitive esport with a global fanbase, featuring professional teams battling across various leagues and tournaments. Each role within a team has a distinct responsibility, but two of the most crucial damage-dealing roles are ADC (Attack Damage Carry) and Mid Laner. These roles often dictate the outcome of fights and matches, making their performance a key aspect of a team's success.
                 One of the most important metrics in evaluating a player's impact is damage per minute per deaths + 1 (DPM / (Deaths + 1)), which adjusts raw damage output by factoring in survivability. This statistic can help determine which role exerts more influence in professional play.
@@ -24,7 +25,9 @@
                 <li>league: The specific league tournament in which the match took place.</li>
                 <li>effectiveness: Column created calculated using damage per minute / (deaths + 1)</li>
             </ul>
+        </section>
 
+        <section>
             <h5>Step 2: Data Cleaning and Exploratory Data Analysis</h5>
             <h3>Data Cleaning</h3>
             <p>We first only keep the relevant columns: <code>gameid</code>, <code>position</code>, <code>dpm</code>, <code>kills</code>, <code>deaths</code>, <code>assists</code>, <code>result</code>, <code>league</code>. In this dataset, each game has 12 rows, with 10 rows representing each of the players and 2 rows for summarizing the overall team performance and result (i.e. team summary rows). We removed the 2 rows for each game that summarized the overall team performance, which brought the initial number of rows from 117,576 to 97,980. We then dropped all the rows that had missing values and found out that it was the same as without dropping, so our data doesn't have any rows with missing data.</p>
@@ -36,7 +39,9 @@
             <p>The box plot represents a bivariate analysis of effectiveness (DPM / (Deaths + 1)) across different roles in League of Legends, allowing us to compare how different positions contribute to sustained damage while accounting for deaths. This analysis highlights clear trends: bot lane (ADC) and mid lane exhibit the highest median effectiveness, suggesting that these roles tend to have the most impact in terms of damage output. The jungle and support roles generally have lower effectiveness, with supports showing the lowest median and least spread, aligning with their more utility-focused playstyle. The presence of extreme outliers, especially in ADC and mid, suggests that performance in these roles can vary significantly, possibly influenced by champion picks, game state, or player skill.</p>
             <img src="grouped_data.png" alt="grouped_data.png" width="600">
             <p>We first grouped the cleaned dataset by position and then calculated the mean and median of all key statistics. By comparing player performance across different roles, we gained a clearer understanding of how each position contributes to the game. Mid and Bot lane players have the highest DPM and effectiveness scores, reinforcing their roles as primary damage dealers. Support players have the lowest DPM and kills but lead in assists, highlighting their role in enabling teammates. Jungle players balance kills and assists, as they frequently roam to support other lanes. Top lane maintains moderate stats across all metrics, indicating a mix of durability and damage potential. This grouping helped visualize the distinct impact each position has on overall gameplay.</p>
+        </section>
 
+        <section>
             <h5>Step 3: Assessment of Missingness</h5>
             <div>
                 <p><b>playername</b>: MD (Missing by Design)</p>
@@ -53,6 +58,8 @@
             <div>
                 <p>We conclude our assessment of missingness analysis by stating that <b>among our relevant columns</b> we found no column that has null values, therefore it is impossible to find any columns that are <b>NMAR</b> and/or <b>MAR</b>.</p>
             </div>
+        </section>
+        <section>
             <h5>Step 4: Hypothesis Testing</h5>
             <div>
                 <h6><b>Null Hypothesis</b></h6>
@@ -84,4 +91,4 @@
             </div>
             <div>
                 <h6><b>Results</b></h6>
-                <p><u><i>To perform the permutation test</u></i>, we first calculated the observed difference in mean carry potential (effectiveness) between mid-lane and ADC players.  This provided the baseline difference we aimed to test. Next, to simulate the null hypothesis, we randomly shuffled the effectiveness values across all players, ensuring that any inherent role-based differences were removed. We then reassigned these shuffled values to the</p>
+                <u><i>To perform the permutation test, we first calculated the observed difference in mean carry potential (effectiveness) between mid-lane and ADC players. role-based differences were removed. We then reassigned these shuffled values to the</p>
