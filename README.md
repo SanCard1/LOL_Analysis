@@ -4,43 +4,24 @@
         <h1>League of Legends Analysis: Race to the Nexus</h1>
 	<h3>by Santiago Cardenas Rey and Michael Luo</h3>
 	<h5>Step 1: Description</h5>
-        <p>We chose the league of legends dataset for this project because it provides a rich and dynamic set of variables that allow for meaningful hypothesis testing and predictive modeling. The dataset includes key performance metrics such as damage per minute, kills, assists, deaths, and game results which enable various statistical analyses. Unlike structured datasets like recipes or power outages, this dataset introduces human decision-making and variability, making the analysis more complex and engaging. Since I have an interest in gaming and data-driven insights, working with this dataset makes the project both enjoyable and intellectually stimulating. Fellow gamers may relate to what we are assessing to best determine the performance of players based on what kind of player they are or coe across (i.e. ADC bot or mid-lane player).</p>
-	<p> Aggregating all data there are 1016472 rows and 161 columns. Our relevant columns for analysis will be:</p>
+        <p>We chose the league of legends dataset for this project because it provides a rich and dynamic set of variables that allow for meaningful hypothesis testing and predictive modeling. The dataset includes key performance metrics such as damage per minute, kills, assists, deaths, and game results which enable various statistical analyses. Unlike structured datasets like recipes or power outages, this dataset introduces human decision-making and variability, making the analysis more complex and engaging. Since I have an interest in gaming and data-driven insights, working with this dataset makes the project both enjoyable and intellectually stimulating. Fellow gamers may relate to what we are assessing to best determine the performance of players based on what kind of player they are or coe across (i.e. ADC bot or mid-lane player). League of Legends (LoL) is a highly competitive esport with a global fanbase, featuring professional teams battling across various leagues and tournaments. Each role within a team has a distinct responsibility, but two of the most crucial damage-dealing roles are ADC (Attack Damage Carry) and Mid Laner. These roles often dictate the outcome of fights and matches, making their performance a key aspect of a team's success.
+One of the most important metrics in evaluating a player's impact is damage per minute per deaths + 1 (DPM / (Deaths + 1)), which adjusts raw damage output by factoring in survivability. This statistic can help determine which role exerts more influence in professional play.
+Our central question is:
+Which role—ADCs or Mid Laners—carries their team more often based on DPM / (Deaths + 1)?
+By analyzing professional match data, we aim to uncover whether ADCs or Mid Laners consistently contribute more adjusted damage and assess how this impacts team success. Understanding this can provide insights into optimal team compositions, strategic drafting, and in-game decision-making.
+</p>
+	<p> The dataset contains 97,980 rows after filtering out team summary data, focusing solely on individual player statistics. Below are the key columns relevant to our analysis:
+</p>
 </body>
 	<ul>
-	    <li>gameid: ID of the game.</li>
-	    <li>datacompleteness: Completeness of the data.</li>
-	    <li>league: League level.</li>
-	    <li>year: Year of the match</li>
-	    <li>date: Date of the game (in case we decide to do time series analysis</li>
-	    <li>game: The game title</li>
-	    <li>side: The team assignation to the player.</li>
-	    <li>position: The position of the player.</li>
-	    <li>playername: In case we want to track the name of the player.</li>
-	    <li>playerid: To keep up with the player specifically.</li>
-	    <li>teamname: In case we want to track the name of the team.</li>
-	    <li>teamid: To keep up with the team specifically.</li>
-	    <li>gamelength: To measure magnitude of kill activity per game.</li>
-	    <li>result: Outcome of the match.</li>
-	    <li>kills: Number of kills.</li>
-	    <li>deaths: Number of deaths.</li>
-	    <li>assists: Number of assists.</li>
-	    <li>teamkills: Number of kills by the whole team.</li>
-	    <li>teamdeaths: Number deaths by the whole team.</li>
-	    <li>doublekills: Number of double kills.</li>
-	    <li>triplekills: Number of triple kills.</li>
-	    <li>quadrakills: Number of quadruple kills.</li>
-	    <li>pentakills: Number of penta kills.</li>
-	    <li>firstblood: A binary value assigning who had first blood in the match.</li>
-	    <li>firstbloodkill: A binary value assigning who had first blood kill in the match.</li>
-	    <li>firstbloodassist: A binary value assigning who had first blood assists in the match.</li>
-	    <li>team kpm: The kills per minute by the team.</li>
-	    <li>ckpm: Average combined kills per minute (team kills + opponent kills).</li>
-	    <li>damagetochampions: The damage done by the player to champions.</li>
-	    <li>dpm: Damage per Minute.</li>
-	    <li>damageshare: Share of the damage by the team.</li>
-	    <li>damagetakenperminute: Amount of damage taken per minute.</li>
-	    <li>damagemitigatedperminute: Average damage mitigated per minute.</li>
+	    <li>gameid:  A unique identifier for each match played.</li>
+	    <li>position: The role played by an individual player within their team composition. The roles include top, jungle, mid, bot(ADC), and support.</li>
+	    <li>dpm (Damage per Minute): The amount of damage a player deals per minute. This is the base metric we will use to evaluate player performance, which will later be adjusted using deaths.</li>
+	    <li>kills: The number of enemy champions a player successfully eliminated during the match.</li>
+	    <li>deaths: The number of times a player was eliminated by enemy champions.</li>
+	    <li>assists: The number of assists credited to a player, indicating instances where they contributed to eliminating an enemy champion without securing the kill themselves.</li>
+	    <li>result: This column indicates the outcome of a match for a specific player's team. 1 represents a win, while 0 represents a loss.</li>
+	    <li>league: The specific league tournament in which the match took place.</li>
 <body>
     <div>
 	<h5>Step 2: Data Cleaning and Exploratory Data Analysis</h5>
