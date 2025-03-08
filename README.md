@@ -85,16 +85,16 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	</div>
 	<div>
 		<h6><b>p-value</b></h6>
-		<h1><b><u><i>1.0</u></i></b></h1>
+		<h1><u><i>1.0</u></i></h1>
 	</div>
 	<div>
 		<h6><b>Results</b></h6>
-		<h1><b><u><i>To perform the permutation test, we first calculated the observed difference in mean carry potential (effectiveness) between mid-lane and ADC players. This provided the baseline difference we aimed to test. Next, to simulate the null hypothesis, we randomly shuffled the effectiveness values across all players, ensuring that any inherent role-based differences were removed. We then reassigned these shuffled values to the mid-lane and ADC groups while maintaining their original sample sizes and recalculated the difference in means. This process was repeated 1000 times to generate a distribution of permuted differences under the assumption that there is no true difference between the roles. The p-value was computed as the proportion of these permuted differences that were greater than or equal to the observed difference.</u></i></b></h1>
+		<h1><u><i>To perform the permutation test, we first calculated the observed difference in mean carry potential (effectiveness) between mid-lane and ADC players. This provided the baseline difference we aimed to test. Next, to simulate the null hypothesis, we randomly shuffled the effectiveness values across all players, ensuring that any inherent role-based differences were removed. We then reassigned these shuffled values to the mid-lane and ADC groups while maintaining their original sample sizes and recalculated the difference in means. This process was repeated 1000 times to generate a distribution of permuted differences under the assumption that there is no true difference between the roles. The p-value was computed as the proportion of these permuted differences that were greater than or equal to the observed difference.</u></i></b></h1>
 	</div>
 	<div>
 		<h6><b>Justifications</b></h6>
 		<img src="hypothesis_test_results.png" alt="hypothesis_test_results.png" width="600">
-		<h1><b><u><i>Based on the hypothesis test performed, with a p-value of 1.000, we fail to reject the null hypothesis. This suggests that the observed difference in carry potential is entirely consistent with what we would expect under random chance. The histogram shows that the observed difference in means (-14.761) lies well within the range of the permuted distribution, meaning there is no statistical evidence to suggest that mid-lane players have a higher mean carry potential than ADC players. This result implies that the differences in carry potential between these roles may be due to normal game variations rather than an inherent positional advantage.</u></i></b></h1>
+		<h1><u><i>Based on the hypothesis test performed, with a p-value of 1.000, we fail to reject the null hypothesis. This suggests that the observed difference in carry potential is entirely consistent with what we would expect under random chance. The histogram shows that the observed difference in means (-14.761) lies well within the range of the permuted distribution, meaning there is no statistical evidence to suggest that mid-lane players have a higher mean carry potential than ADC players. This result implies that the differences in carry potential between these roles may be due to normal game variations rather than an inherent positional advantage.</u></i></b></h1>
 	</div>
 	<div>
 		<h5>Step 5: Framing a Prediction Problem</h5>
