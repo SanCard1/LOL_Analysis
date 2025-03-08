@@ -144,6 +144,71 @@
 				<td>Ordinal</td>
 				<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
 			</tr>
+			<tr>
+				<td>date</td>
+				<td>Ordinal</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>game</td>
+				<td>Nominal</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>side</td>
+				<td>Categorical</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>playername</td>
+				<td>Categorical</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>playerid</td>
+				<td>Nominal</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>teamname</td>
+				<td>Categorical</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>teamid</td>
+				<td>Nominal</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>gamelength</td>
+				<td>Numeric</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>result</td>
+				<td>Nominal</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>kills</td>
+				<td>Numeric</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>deaths</td>
+				<td>Numeric</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>assists</td>
+				<td>Numeric</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
+			<tr>
+				<td>teamkills</td>
+				<td>Numeric</td>
+				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+			</tr>
 		</table>	
 	</div>
 </body>
