@@ -42,9 +42,6 @@
 	    <li>damageshare: Share of the damage by the team.</li>
 	    <li>damagetakenperminute: Amount of damage taken per minute.</li>
 	    <li>damagemitigatedperminute: Average damage mitigated per minute.</li>
-	    
-	</ul>
-    </div>
 <body>
     <div>
 	<h5>Step 2: Data Cleaning and Exploratory Data Analysis</h5>
