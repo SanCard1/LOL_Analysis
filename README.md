@@ -96,228 +96,228 @@
             </div>
             <u><i>To perform the permutation test, we first calculated the observed difference in mean carry potential (effectiveness) between mid-lane and ADC players. This provided the baseline difference we aimed to test. Next, to simulate the null hypothesis, we randomly shuffled the effectiveness values across all players, ensuring that any inherent role-based differences were removed. We then reassigned these shuffled values to the mid-lane and ADC groups while maintaining their original sample sizes and recalculated the difference in means. This process was repeated 1000 times to generate a distribution of permuted differences under the assumption that there is no true difference between the roles. The p-value was computed as the proportion of these permuted differences that were greater than or equal to the observed difference.</u></i>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-<h6><b>Justifications</b></h6>
+        <h6><b>Justifications</b></h6>
 
-<img src="hypothesis_test_results.png" alt="hypothesis_test_results.png" width="600">
+        <img src="hypothesis_test_results.png" alt="hypothesis_test_results.png" width="600">
 
-<u><i>Based on the hypothesis test performed, with a p-value of 1.000, we fail to reject the null hypothesis. This suggests that the observed difference in carry potential is entirely consistent with what we would expect under random chance. The histogram shows that the observed difference in means (-14.761) lies well within the range of the permuted distribution, meaning there is no statistical evidence to suggest that mid-lane players have a higher mean carry potential than ADC players. This result implies that the differences in carry potential between these roles may be due to normal game variations rather than an inherent positional advantage.</u></i>
+        <u><i>Based on the hypothesis test performed, with a p-value of 1.000, we fail to reject the null hypothesis. This suggests that the observed difference in carry potential is entirely consistent with what we would expect under random chance. The histogram shows that the observed difference in means (-14.761) lies well within the range of the permuted distribution, meaning there is no statistical evidence to suggest that mid-lane players have a higher mean carry potential than ADC players. This result implies that the differences in carry potential between these roles may be due to normal game variations rather than an inherent positional advantage.</u></i>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-<h5>Step 5: Framing a Prediction Problem</h5>
+        <h5>Step 5: Framing a Prediction Problem</h5>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-<p><b><u>Prediction Problem</u></b>: We want to identify the role of the player given their post-game data. This will imply for us to do a <u>classification model</u></p>
+        <p><b><u>Prediction Problem</u></b>: We want to identify the role of the player given their post-game data. This will imply for us to do a <u>classification model</u></p>
 
-<p><b><u>Type of Classification</b></u>: multiclass classification. Some columns have non-binary data but are yet numeric (some columns are binary too), thus a suitable task for a multiclass classification.</p>
+        <p><b><u>Type of Classification</b></u>: multiclass classification. Some columns have non-binary data but are yet numeric (some columns are binary too), thus a suitable task for a multiclass classification.</p>
 
-<p><b><u>Response Variable</b></u>: since we are figuring the position of the player with the given player's match statistics, the response variable is <b><u>position</u></b>.</p>
+        <p><b><u>Response Variable</b></u>: since we are figuring the position of the player with the given player's match statistics, the response variable is <b><u>position</u></b>.</p>
 
-<p><b><u>Motivation</b></u>: The motivation behind this is to identify the patterns, statistics, strengths, weaknesses, and behaviors of distinct player positions. By using match performance statistics, we can inform people as to how different kind of players behave in the match (i.e. suppose a player is type 1, then we would be able to have a solid understanding of the player's skills and preferences such as firstblood count or damage per minute or even player location patterns). In here we are prioritizing previous match statistics and outcomes to predict future matches where the players have known positions (reverse causality).</p>
+        <p><b><u>Motivation</b></u>: The motivation behind this is to identify the patterns, statistics, strengths, weaknesses, and behaviors of distinct player positions. By using match performance statistics, we can inform people as to how different kind of players behave in the match (i.e. suppose a player is type 1, then we would be able to have a solid understanding of the player's skills and preferences such as firstblood count or damage per minute or even player location patterns). In here we are prioritizing previous match statistics and outcomes to predict future matches where the players have known positions (reverse causality).</p>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-<h5>Step 6: Baseline Model</h5>
+        <h5>Step 6: Baseline Model</h5>
 
-</div>
+    </div>
 
-<div>
+    <div>
 
-<table>
+        <table>
 
-<tr>
+            <tr>
 
-<th>Features</th>
+                <th>Features</th>
 
-<th>Type</th>
+                <th>Type</th>
 
-<th>Encodings</th>
+                <th>Encodings</th>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>gameid</td>
+                <td>gameid</td>
 
-<td>Nominal</td>
+                <td>Nominal</td>
 
-<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>datacompleteness</td>
+                <td>datacompleteness</td>
 
-<td>Ordinal</td>
+                <td>Ordinal</td>
 
-<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>league</td>
+                <td>league</td>
 
-<td>Categorical</td>
+                <td>Categorical</td>
 
-<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>year</td>
+                <td>year</td>
 
-<td>Ordinal</td>
+                <td>Ordinal</td>
 
-<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
+                <td><b><u><i>MICHAEL DO THIS</b></u></i></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>date</td>
+                <td>date</td>
 
-<td>Ordinal</td>
+                <td>Ordinal</td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>game</td>
+                <td>game</td>
 
-<td>Nominal</td>
+                <td>Nominal</td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>side</td>
+                <td>side</td>
 
-<td>Categorical</td>
+                <td>Categorical</td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>playername</td>
+                <td>playername</td>
 
-<td>Categorical</td>
+                <td>Categorical</td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>playerid</td>
+                <td>playerid</td>
 
-<td>Nominal</td>
+                <td>Nominal</td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>teamname</td>
+                <td>teamname</td>
 
-<td>Categorical</td>
+                <td>Categorical</td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>teamid</td>
+                <td>teamid</td>
 
-<td>Nominal</td>
+                <td>Nominal</td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-</tr>
+            </tr>
 
-<tr>
+            <tr>
 
-<td>gamelength</td>
+                <td>gamelength</td>
+        
+                <td>Numeric</td>
 
-<td>Numeric</td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+            </tr>
 
-</tr>
+            <tr>
 
-<tr>
+                <td>result</td>
 
-<td>result</td>
+                <td>Nominal</td>
 
-<td>Nominal</td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+            </tr>
 
-</tr>
+            <tr>
 
-<tr>
+                <td>kills</td>
 
-<td>kills</td>
+                <td>Numeric</td>
 
-<td>Numeric</td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+            </tr>
 
-</tr>
+            <tr>
 
-<tr>
+                <td>deaths</td>
 
-<td>deaths</td>
+                <td>Numeric</td>
 
-<td>Numeric</td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+            </tr>
 
-</tr>
+            <tr>
 
-<tr>
+                <td>assists</td>
 
-<td>assists</td>
+                <td>Numeric</td>
 
-<td>Numeric</td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+            </tr>
 
-</tr>
+            <tr>
 
-<tr>
+                <td>teamkills</td>
 
-<td>teamkills</td>
+                <td>Numeric</td>
 
-<td>Numeric</td>
+                <td><b><u><i>MICHAEL DO THIS</i></u></b></td>
 
-<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
+            </tr>
 
-</tr>
+        </table>
 
-</table>
-
-</div>
+    </div>
 
 </body>
