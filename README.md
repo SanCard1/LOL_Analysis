@@ -2,7 +2,7 @@
 <html lang="en">
 <body>
     <div class="container">
-        <h1>Leage of Legends Analysis: Race to the Nexus</h1>
+        <h1>League of Legends Analysis: Race to the Nexus</h1>
 	<h3>by Santiago Cardenas Rey and Michael Luo</h3>
 	<h5>Step 1: Description</h5>
         <p>We chose the league of legends dataset for this project because it provides a rich and dynamic set of variables that allow for meaningful hypothesis testing and predictive modeling. The dataset includes key performance metrics such as damage per minute, kills, assists, deaths, and game results which enable various statistical analyses. Unlike structured datasets like recipes or power outages, this dataset introduces human decision-making and variability, making the analysis more complex and engaging. Since I have an interest in gaming and data-driven insights, working with this dataset makes the project both enjoyable and intellectually stimulating. Fellow gamers may relate to what we are assessing to best determine the performance of players based on what kind of player they are or coe across (i.e. ADC bot or mid-lane player).</p>
