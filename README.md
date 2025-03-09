@@ -152,4 +152,24 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	<img src="model_results.png" alt="model_results.png" width="600">
 	<p>Our model achieved an overall accuracy of 67.53%, with varying performance across different roles. The highest precision, recall, and F1-score were observed for the jng (jungle) role, achieving a perfect score of 1.00, indicating that the model identified jungle players with complete accuracy. Similarly, the sup (support) role performed well, with an F1-score of 0.96, suggesting strong classification ability. However, performance was lower for bot (bottom), mid (middle), and top (top lane) roles, with F1-scores ranging from 0.40 to 0.53, indicating greater misclassification in these categories. The macro and weighted averages align closely with overall accuracy, reinforcing that while the model performs well on some roles, it struggles with others, particularly mid and bot.</p>
 	</div>
+		<h5>Step 6: Final Model</h5>
+		<p>In our final model, we added two new features: kill participation and gold efficiency, along with including wards placed as a feature. We introduced these features because they provide valuable insights into a player's role in the game. Kill participation captures how involved a player is in team fights by measuring the proportion of team kills they contributed to through kills or assists. This is particularly important for differentiating between roles like support, which has high assist numbers, and jungle, which is heavily involved in team fights. Gold efficiency was introduced to reflect how effectively a player converts earned gold into performance while penalizing deaths. This is useful for distinguishing between roles like bot lane carry, which aims for high gold efficiency, and mid, which may take more risks for solo plays. Additionally, wards placed was incorporated to help separate mid and support roles, as supports typically place more wards than other positions.</p>
+    	<p>Our final model continues to use a Random Forest Classifier, consistent with our baseline model. Since all of our newly added features are numerical, we applied a StandardScaler transformation to ensure fair weighting. We then used GridSearchCV with a 5-fold cross-validation to optimize three key hyperparameters:</p>
+    <ul>
+        <li><strong>n_estimators</strong> (100, 200): Controls the number of trees in the forest.</li>
+        <li><strong>max_depth</strong> (None, 10, 20): Limits the depth of each tree to prevent overfitting.</li>
+        <li><strong>min_samples_split</strong> (2, 5): Determines the minimum number of samples required to split a node.</li>
+    </ul>
+    	<p>After tuning, we identified the best combination of hyperparameters and trained our final model accordingly.</p>
+    <h6>Results</h6>
+    <p>The final model achieved an accuracy of 0.6989, marking an improvement from the baseline model's accuracy of 0.6753.</p>
+    <p>From the classification report, we observed:</p>
+    <ul>
+        <li>Notable improvements in precision and recall for the top lane role (f1-score increased from 0.53 to 0.59).</li>
+        <li>Bot and mid roles continue to be challenging to separate, though slight improvements were made.</li>
+        <li>Jungle and support roles remain highly distinguishable with near-perfect precision and recall.</li>
+    </ul>
+		<img src="confusion_matrix.png" alt="confusion_matrix.png" width="600">
+    <p>The confusion matrix highlights that most misclassifications still occur between bot and mid lanes. Despite these challenges, the improved feature engineering and hyperparameter tuning resulted in a more robust classification model.</p>
+</body>
 </body>
