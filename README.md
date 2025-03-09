@@ -108,98 +108,46 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	<div>
 		<h5>Step 6: Baseline Model</h5>
 	</div>
-	<div>
-		<table>
-			<tr>
-				<th>Features</th>
-				<th>Type</th>
-				<th>Encodings</th>
-			</tr>
-			<tr>
-				<td>gameid</td>
-				<td>Nominal</td>
-				<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
-			</tr>
-			<tr>
-				<td>datacompleteness</td>
-				<td>Ordinal</td>
-				<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
-			</tr>
-			<tr>
-				<td>league</td>
-				<td>Categorical</td>
-				<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
-			</tr>
-			<tr>
-				<td>year</td>
-				<td>Ordinal</td>
-				<td><b><u><i>MICHAEL DO THIS</b></u></i></td>
-			</tr>
-			<tr>
-				<td>date</td>
-				<td>Ordinal</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>game</td>
-				<td>Nominal</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>side</td>
-				<td>Categorical</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>playername</td>
-				<td>Categorical</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>playerid</td>
-				<td>Nominal</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>teamname</td>
-				<td>Categorical</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>teamid</td>
-				<td>Nominal</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>gamelength</td>
-				<td>Numeric</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>result</td>
-				<td>Nominal</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>kills</td>
-				<td>Numeric</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>deaths</td>
-				<td>Numeric</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>assists</td>
-				<td>Numeric</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-			<tr>
-				<td>teamkills</td>
-				<td>Numeric</td>
-				<td><b><u><i>MICHAEL DO THIS</i></u></b></td>
-			</tr>
-		</table>	
+		<div>
+		<p>For the baseline model, we used a <b>Random Forest Classifier</b>, with the following six features: <b>kills, deaths, dpm_per_death, teamkills, monsterkills, and minionkills</b>.</p>
+	<p>All six features are <b>quantitative</b>:</p>
+    <table>
+        <tr>
+            <th>Features</th>
+            <th>Type</th>
+            <th>Encodings</th>
+        </tr>
+        <tr>
+            <td>kills</td>
+            <td>Numeric</td>
+            <td><b>StandardScaler</b></td>
+        </tr>
+        <tr>
+            <td>deaths</td>
+            <td>Numeric</td>
+            <td><b>StandardScaler</b></td>
+        </tr>
+        <tr>
+            <td>dpm_per_death</td>
+            <td>Numeric</td>
+            <td><b>StandardScaler</b></td>
+        </tr>
+        <tr>
+            <td>teamkills</td>
+            <td>Numeric</td>
+            <td><b>StandardScaler</b></td>
+        </tr>
+        <tr>
+            <td>monsterkills</td>
+            <td>Numeric</td>
+            <td><b>StandardScaler</b></td>
+        </tr>
+        <tr>
+            <td>minionkills</td>
+            <td>Numeric</td>
+            <td><b>StandardScaler</b></td>
+        </tr>
+    </table>
+    <p>We applied the <b>StandardScaler Transformer</b> to normalize all numerical features. This step ensures that differences in game length do not disproportionately influence the model, as players in longer matches accumulate more statistics, making direct comparisons unfair.</p>
 	</div>
 </body>
