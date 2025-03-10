@@ -174,4 +174,12 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<img src="confusion_matrix.png" alt="confusion_matrix.png" width="600">
     <p>The confusion matrix highlights that most misclassifications still occur between bot and mid lanes. Despite these challenges, the improved feature engineering and hyperparameter tuning resulted in a more robust classification model.</p>
 </body>
+<body>
+	<div>
+		<h5>Step 8: Fairness Analysis</h5>
+	</div>
+	<div>
+		<p>Since our model is doing a multi-class classifier predicting the five categories, we see that it has done a good job on identifying <code>'jng'</code> and <code>'sup'</code> but is inconsistent with <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> player types.</p>
+	</div>
 </body>
+
