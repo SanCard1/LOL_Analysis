@@ -179,7 +179,18 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<h5>Step 8: Fairness Analysis</h5>
 	</div>
 	<div>
-		<p>Since our model is doing a multi-class classifier predicting the five categories, we see that it has done a good job on identifying <code>'jng'</code> and <code>'sup'</code> but is inconsistent with <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> player types.</p>
+		<p>Since our model is doing a multi-class classifier predicting the five categories, we see that it has done a good job on identifying <code>'jng'</code> and <code>'sup'</code> but is inconsistent with <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> player types. Considering this nature we can form a permutation test to identify any formal bias towards roles that are easier to predict such as <code>'jng'</code> and <code>'sup'</code>, we will separate the position types in two groups:</p>
+		<ul>
+			<li><b><u>Group 1</u></b>: High-Performing Roles (<code>'jng'</code> and <code>'sup'</code>).</li>
+			<li><b><u>Group 2</u></b>: Lower-Performing Roles (<code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code>).</li>
+		</ul>
+	</div>
+ 	<div>
+		<h6>Permutation Test</h6>
+	</div>
+	<div>
+		<p>First we will grab the predicted variables column with the rest of the dataset and then classify True or False if our actual label false in the predicted label's group (either Group 1 or Group 2 explained above). We will take the average of <code>True</code> values within each group and then calculate the observed difference between the Group 1 and Group 2 means.</p>
+		<p>Then we will perform <b>1000</b> permutation (for good measure) to assess any bias among the two distributions and find the proportion of the differences greater than or equal to our original observation. Since we set our <code>p-value</code> is 0.05 if it exceeds the p-value then we fail to reject the null (the difference in accuracy could be at random), otherwise we reject the null (there is solid proof of bias towards the "High-Performing Roles").</p>
 	</div>
 </body>
 
