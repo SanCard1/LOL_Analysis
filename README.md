@@ -185,12 +185,25 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 			<li><b><u>Group 2</u></b>: Lower-Performing Roles (<code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code>).</li>
 		</ul>
 	</div>
+	<div>
+		<h6>Hypothesis</h6>
+	</div>
+	<div>
+		<ul>
+			<li><b><u>Null Hypothesis</u></b>: Our classification model is unbiased in which the discrepancy between <code>Group 1</code> and <code>Group 2</code> was a simple occurence of chance.</li>
+			<li><b><u>Alternative Hypothesis</u></b>: Our classification model <b>is</b> biased towards <code>Group 1</code> due to the chance of occurring being statistically significant.</li>
+		</ul>
+	</div>
  	<div>
 		<h6>Permutation Test</h6>
 	</div>
 	<div>
 		<p>First we will grab the predicted variables column with the rest of the dataset and then classify True or False if our actual label false in the predicted label's group (either Group 1 or Group 2 explained above). We will take the average of <code>True</code> values within each group and then calculate the observed difference between the Group 1 and Group 2 means.</p>
 		<p>Then we will perform <b>1000</b> permutation (for good measure) to assess any bias among the two distributions and find the proportion of the differences greater than or equal to our original observation. Since we set our <code>p-value</code> is 0.05 if it exceeds the p-value then we fail to reject the null (the difference in accuracy could be at random), otherwise we reject the null (there is solid proof of bias towards the "High-Performing Roles").</p>
-	</div>
+		<p>We will then use <code>sklearn.metrics</code> and more specifically <code>precision_score</code> to assess the accuracy of our classification model upon the two groups.</p>
+		<h6>Permutation Conclusion</h6>
+	 	<p>After running the code displayed above we have accumulated a p-value of <b>0.0</b>. Therefore we have <b>strong evidence</b> that the accuracy is <u>heavily</u> biased towards the higher performing group (or Group 1). This would make sense as <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> have very similar match performance statistics.</p>
+		<img src="output.png" alt="output.png" width="600">
+ 	</div>
 </body>
 
