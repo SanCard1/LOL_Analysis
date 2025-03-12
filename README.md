@@ -320,37 +320,54 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
         }
     }];
 
-    // Create layout configuration
     const layout = {
-        title: 'Permutation Test Results',
-        xaxis: {
-            title: 'Difference in Precision (Permuted)',
-            showgrid: true,
-            zeroline: true
-        },
-        yaxis: {
-            title: 'Frequency',
-            showgrid: true,
-            zeroline: true
-        },
-        bargap: 0.1,
-        shapes: [{
-            type: 'line',
-            x0: 0.09164558718119603,
-            x1: 0.09164558718119603,
-            y0: 0,
-            y1: 1,
-            xref: 'x',
-            yref: 'paper',
-            line: {
-                color: 'red',
-                dash: 'dash',
-                width: 2
+    title: {
+        text: 'Permutation Test Results',
+        font: {
+            color: 'white'  // Set title font color to white
+        }
+    },
+    xaxis: {
+        title: {
+            text: 'Difference in Precision (Permuted)',
+            font: {
+                color: 'white'  // Set x-axis title font color to white
             }
-        }],
-        plot_bgcolor: '#000000',
-        paper_bgcolor: '#000000'
-    };
+        },
+        showgrid: true,
+        zeroline: true
+    },
+    yaxis: {
+        title: {
+            text: 'Frequency',
+            font: {
+                color: 'white'  // Set y-axis title font color to white
+            }
+        },
+        showgrid: true,
+        zeroline: true
+    },
+    bargap: 0.1,
+    shapes: [{
+        type: 'line',
+        x0: 0.09164558718119603,
+        x1: 0.09164558718119603,
+        y0: 0,
+        y1: 1,
+        xref: 'x',
+        yref: 'paper',
+        line: {
+            color: 'red',
+            dash: 'dash',
+            width: 2
+        }
+    }],
+    plot_bgcolor: '#000000',
+    paper_bgcolor: '#000000',
+    font: {
+        color: 'white'  // Set general font color to white for all labels and text
+    }
+};
 
     // Create the plot
     Plotly.newPlot('plotly-plot', plotData, layout);
