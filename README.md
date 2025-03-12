@@ -362,8 +362,8 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
             width: 2
         }
     }],
-    plot_bgcolor: '#202020',
-    paper_bgcolor: '#202020',
+    plot_bgcolor: '#1b1b1b',
+    paper_bgcolor: '#1b1b1b',
     font: {
         color: 'white'  // Set general font color to white for all labels and text
     }
