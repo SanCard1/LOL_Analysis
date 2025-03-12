@@ -348,8 +348,8 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
                 width: 2
             }
         }],
-        plot_bgcolor: '#f5f5f5',
-        paper_bgcolor: '#ffffff'
+        plot_bgcolor: '#000000',
+        paper_bgcolor: '#000000'
     };
 
     // Create the plot
