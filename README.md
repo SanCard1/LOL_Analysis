@@ -315,7 +315,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
             color: '#636efa',
             line: {
                 color: '#2a3f5f',
-                width: 0.5
+                width: 0
             }
         }
     }];
