@@ -394,8 +394,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 </script>
 
 		<h4>Permutation Conclusion</h4>
-	 	<p>After running the code displayed above we have accumulated a p-value of <b>0.0</b>. Therefore we have <b>strong evidence</b> that the accuracy is <u>heavily</u> biased towards the higher performing group (or Group 1). This would make sense as <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> have very similar match performance statistics.</p>
-		<img src="output.png" alt="output.png" width="600">
+	 	<p>After running the code displayed above we have accumulated a p-value of <b>0.0</b>. Therefore we have <b>strong evidence</b> that the accuracy is <u>heavily</u> biased towards the higher performing group (or Group 1). This would make sense as <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> have very similar match performance statistics.
  	</div>
 </body>
 
