@@ -54,6 +54,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
         <p>We first only keep the relevant columns: <code>gameid</code>, <code>position</code>, <code>dpm</code>, <code>kills</code>, <code>deaths</code>, <code>assists</code>, <code>result</code>, <code>league</code>, <code>effectiveness</code>. In this dataset, each game has 12 rows, with 10 rows representing each of the players and 2 rows for summarizing the overall team performance and result (i.e. team summary rows). We removed the 2 rows for each game that summarized the overall team performance, which brought the initial number of rows from 117,576 to 97,980. We then dropped all the rows that had missing values and found out that it was the same as without dropping, so our data doesn't have any rows with missing data.</p>
 		<p>Below is the head of our league_clean dataframe.</p>
 		<iframe src="assets/lol_aggregates.html" width="100%" height="300px"></iframe>
+        <h3>Univariate Analysis</h3>
 		<iframe
   src="assets/dpm_distribution.html"
   width="800"
@@ -61,6 +62,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
   frameborder="0"
 ></iframe>
         <p>We performed univariate analysis on the distribution of DPM, which is almost normal with a slight right skew. This shows that the data is well-behaved, where most players deal moderate damage, while fewer achieve very high DPM, which is typical of gaming scenarios. The box plot above the histogram shows several outliers on the right-hand side. These represent exceptionally high DPM performances, likely from players who dominated the game or played specific high-damage champions.</p>
+        <h3>Bivariate Analysis</h3>
 		<iframe
   src="assets/effectiveness_boxplot.html"
   width="800"
@@ -68,6 +70,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
   frameborder="0"
 ></iframe>
 		<p>The box plot represents a bivariate analysis of effectiveness (DPM / (Deaths + 1)) across different roles in League of Legends, allowing us to compare how different positions contribute to sustained damage while accounting for deaths. This analysis highlights clear trends: bot lane (ADC) and mid lane exhibit the highest median effectiveness, suggesting that these roles tend to have the most impact in terms of damage output. The jungle and support roles generally have lower effectiveness, with supports showing the lowest median and least spread, aligning with their more utility-focused playstyle. The presence of extreme outliers, especially in ADC and mid, suggests that performance in these roles can vary significantly, possibly influenced by champion picks, game state, or player skill.</p>
+        <h3>Interesting Aggregates</h3>
 		<iframe src="assets/lol_grouped_stats.html" width="100%" height="300px"></iframe>
 		<p>We first grouped the cleaned dataset by position and then calculated the mean and median of all key statistics. By comparing player performance across different roles, we gained a clearer understanding of how each position contributes to the game. Mid and Bot lane players have the highest DPM and effectiveness scores, reinforcing their roles as primary damage dealers. Support players have the lowest DPM and kills but lead in assists, highlighting their role in enabling teammates. Jungle players balance kills and assists, as they frequently roam to support other lanes. Top lane maintains moderate stats across all metrics, indicating a mix of durability and damage potential. This grouping helped visualize the distinct impact each position has on overall gameplay.</p>
     </div>
