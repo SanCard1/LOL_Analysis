@@ -8,6 +8,7 @@
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #ccc;
+	    color: white;
         }
         th, td {
             padding: 8px;
