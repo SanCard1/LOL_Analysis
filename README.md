@@ -186,7 +186,6 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
         </tr>
     </table>
     <p>We applied the <b>StandardScaler Transformer</b> to normalize all numerical features. This step ensures that differences in game length do not disproportionately influence the model, as players in longer matches accumulate more statistics, making direct comparisons unfair.</p>
-	<iframe src="assets/classification_report.html" width="100%" height="400px"></iframe>
 	<p>Our model achieved an overall accuracy of 67.53%, with varying performance across different roles. The highest precision, recall, and F1-score were observed for the jng (jungle) role, achieving a perfect score of 1.00, indicating that the model identified jungle players with complete accuracy. Similarly, the sup (support) role performed well, with an F1-score of 0.96, suggesting strong classification ability. However, performance was lower for bot (bottom), mid (middle), and top (top lane) roles, with F1-scores ranging from 0.40 to 0.53, indicating greater misclassification in these categories. The macro and weighted averages align closely with overall accuracy, reinforcing that while the model performs well on some roles, it struggles with others, particularly mid and bot.</p>
 	</div>
 		<h3>Final Model</h3>
@@ -200,6 +199,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
     	<p>After tuning, we identified the best combination of hyperparameters and trained our final model accordingly.</p>
     <h6>Results</h6>
     <p>The final model achieved an accuracy of 0.6989, marking an improvement from the baseline model's accuracy of 0.6753.</p>
+    <iframe src="assets/classification_report.html" width="100%" height="400px"></iframe>
     <p>From the classification report, we observed:</p>
     <ul>
         <li>Notable improvements in precision and recall for the top lane role (f1-score increased from 0.53 to 0.59).</li>
