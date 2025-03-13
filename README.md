@@ -4,27 +4,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Data Analysis: Race to the Nexus</title>
     <style>
-        /* Simple styling to mimic markdown table look */
         table {
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #ccc;
         }
-
         th, td {
             padding: 8px;
             text-align: left;
             border: 1px solid #ddd;
         }
-
         th {
             background-color: #f4f4f4;
         }
-
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-
         tr:hover {
             background-color: #f1f1f1;
         }
@@ -197,7 +192,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
         </tr>
     </table>
     <p>We applied the <b>StandardScaler Transformer</b> to normalize all numerical features. This step ensures that differences in game length do not disproportionately influence the model, as players in longer matches accumulate more statistics, making direct comparisons unfair.</p>
-	<img src="model_results.png" alt="model_results.png" width="600">
+	<iframe src="assets/classification_report.html" width="100%" height="400px"></iframe>
 	<p>Our model achieved an overall accuracy of 67.53%, with varying performance across different roles. The highest precision, recall, and F1-score were observed for the jng (jungle) role, achieving a perfect score of 1.00, indicating that the model identified jungle players with complete accuracy. Similarly, the sup (support) role performed well, with an F1-score of 0.96, suggesting strong classification ability. However, performance was lower for bot (bottom), mid (middle), and top (top lane) roles, with F1-scores ranging from 0.40 to 0.53, indicating greater misclassification in these categories. The macro and weighted averages align closely with overall accuracy, reinforcing that while the model performs well on some roles, it struggles with others, particularly mid and bot.</p>
 	</div>
 		<h3>Step 7: Final Model</h3>
