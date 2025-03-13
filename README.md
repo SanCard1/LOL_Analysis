@@ -164,7 +164,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	<div>
 		<p>For the baseline model, we used a <b>Random Forest Classifier</b>, with the following six features: <b>kills, deaths, dpm_per_death, teamkills, monsterkills, and minionkills</b>.</p>
     <p>All six features are <b>quantitative</b>:</p>
-    <table>
+    <table style="color: white">
         <tr>
             <th>Features</th>
             <th>Type</th>
