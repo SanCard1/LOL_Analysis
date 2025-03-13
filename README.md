@@ -8,20 +8,21 @@
             width: 100%;
             border-collapse: collapse;
             border: 1px solid #ccc;
-	    color: white;
+		color: white;
         }
         th, td {
             padding: 8px;
             text-align: left;
             border: 1px solid #ddd;
-	    color: white;
+		color: white;
         }
         th {
             background-color: #727272;
+		color: white;
         }
 	thead {
 	    background-color: #727272
-	    color: white
+	    color: white;
 	}
         tr:nth-child(even) {
             background-color: #f9f9f9;
@@ -29,7 +30,7 @@
         }
         tr:hover {
             background-color: #f1f1f1;
-	    color: white
+	    color: white;
         }
     </style>
 </head>
