@@ -28,8 +28,9 @@
             background-color: #f9f9f9;
 	    color: white;
         }
-	tr: nth-child(odd) {
-		color: black;
+	tr:nth-child(odd) {
+	    background-color: #f9f9f9;
+	    color: white;
 	}
         tr:hover {
             background-color: #f1f1f1;
