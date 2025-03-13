@@ -15,7 +15,7 @@
             border: 1px solid #ddd;
         }
         th {
-            background-color: #bebebe;
+            background-color: #727272;
         }
         tr:nth-child(even) {
             background-color: #f9f9f9;
