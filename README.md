@@ -89,6 +89,18 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<ul>
 			<li><b>playerid</b> is missing by design since you can take a look at the <b>playername</b> column and if you see a null value then you can predict with certainty that the <b>playerid</b> value is going to be null.</li>
 		</ul>
+        <iframe
+  src="assets/custom_pie_playername.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+<iframe
+  src="assets/custom_pie_playerid.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 	</div>
 	<div>
 		<p>We conclude our assessment of missingness analysis by stating that <b>among our relevant columns</b> we found no column that has null values, therefore it is impossible to find any columns that are <b>NMAR</b> and/or <b>MAR</b>.</p>
