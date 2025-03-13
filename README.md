@@ -31,9 +31,19 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
         <p>We first only keep the relevant columns: <code>gameid</code>, <code>position</code>, <code>dpm</code>, <code>kills</code>, <code>deaths</code>, <code>assists</code>, <code>result</code>, <code>league</code>. In this dataset, each game has 12 rows, with 10 rows representing each of the players and 2 rows for summarizing the overall team performance and result (i.e. team summary rows). We removed the 2 rows for each game that summarized the overall team performance, which brought the initial number of rows from 117,576 to 97,980. We then dropped all the rows that had missing values and found out that it was the same as without dropping, so our data doesn't have any rows with missing data.</p>
 		<p>Below is the head of our league_clean dataframe.</p>
 		<img src="head_cleaned.png" alt="head_cleaned.png" width="600">
-		<img src="dpm_distribution.png" alt="DPM Distribution Histogram" width="600">
+		<iframe
+  src="assets/dpm_distribution.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
         <p>We performed univariate analysis on the distribution of DPM, which is almost normal with a slight right skew. This shows that the data is well-behaved, where most players deal moderate damage, while fewer achieve very high DPM, which is typical of gaming scenarios. The box plot above the histogram shows several outliers on the right-hand side. These represent exceptionally high DPM performances, likely from players who dominated the game or played specific high-damage champions.</p>
-		<img src="bivariateanalysis_distribution.png" alt="bivariateanalysis_distribution.png" width="600">
+		<iframe
+  src="assets/effectiveness_boxplot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 		<p>The box plot represents a bivariate analysis of effectiveness (DPM / (Deaths + 1)) across different roles in League of Legends, allowing us to compare how different positions contribute to sustained damage while accounting for deaths. This analysis highlights clear trends: bot lane (ADC) and mid lane exhibit the highest median effectiveness, suggesting that these roles tend to have the most impact in terms of damage output. The jungle and support roles generally have lower effectiveness, with supports showing the lowest median and least spread, aligning with their more utility-focused playstyle. The presence of extreme outliers, especially in ADC and mid, suggests that performance in these roles can vary significantly, possibly influenced by champion picks, game state, or player skill.</p>
 		<img src="grouped_data.png" alt="grouped_data.png" width="600">
 		<p>We first grouped the cleaned dataset by position and then calculated the mean and median of all key statistics. By comparing player performance across different roles, we gained a clearer understanding of how each position contributes to the game. Mid and Bot lane players have the highest DPM and effectiveness scores, reinforcing their roles as primary damage dealers. Support players have the lowest DPM and kills but lead in assists, highlighting their role in enabling teammates. Jungle players balance kills and assists, as they frequently roam to support other lanes. Top lane maintains moderate stats across all metrics, indicating a mix of durability and damage potential. This grouping helped visualize the distinct impact each position has on overall gameplay.</p>
@@ -94,7 +104,12 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	</div>
 	<div>
 		<h4><b>Justifications</b></h4>
-		<img src="hypothesis_test_results.png" alt="hypothesis_test_results.png" width="600">
+		<iframe
+  src="assets/permutation_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 		<p>Based on the hypothesis test performed, with a p-value of 1.000, we fail to reject the null hypothesis. This suggests that the observed difference in carry potential is entirely consistent with what we would expect under random chance. The histogram shows that the observed difference in means (-14.761) lies well within the range of the permuted distribution, meaning there is no statistical evidence to suggest that mid-lane players have a higher mean carry potential than ADC players. This result implies that the differences in carry potential between these roles may be due to normal game variations rather than an inherent positional advantage.</p>
 	</div>
 	<div>
@@ -171,7 +186,12 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
         <li>Bot and mid roles continue to be challenging to separate, though slight improvements were made.</li>
         <li>Jungle and support roles remain highly distinguishable with near-perfect precision and recall.</li>
     </ul>
-		<img src="confusion_matrix.png" alt="confusion_matrix.png" width="600">
+		<iframe
+  src="assets/confusion_matrix.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
     <p>The confusion matrix highlights that most misclassifications still occur between bot and mid lanes. Despite these challenges, the improved feature engineering and hyperparameter tuning resulted in a more robust classification model.</p>
 </body>
 <body>
