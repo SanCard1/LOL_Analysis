@@ -15,7 +15,7 @@
             border: 1px solid #ddd;
         }
         th {
-            background-color: #f4f4f4;
+            background-color: #bebebe;
         }
         tr:nth-child(even) {
             background-color: #f9f9f9;
@@ -27,9 +27,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>League of Legends Analysis: Race to the Nexus</h1>
-	<h2>by Santiago Cardenas Rey and Michael Luo</h2>
-	<h3>Step 1: Description</h3>
+	<h3>Description</h3>
         <p>We chose the league of legends dataset for this project because it provides a rich and dynamic set of variables that allow for meaningful hypothesis testing and predictive modeling. The dataset includes key performance metrics such as damage per minute, kills, assists, deaths, and game results which enable various statistical analyses. Unlike structured datasets like recipes or power outages, this dataset introduces human decision-making and variability, making the analysis more complex and engaging. Since I have an interest in gaming and data-driven insights, working with this dataset makes the project both enjoyable and intellectually stimulating. Fellow gamers may relate to what we are assessing to best determine the performance of players based on what kind of player they are or coe across (i.e. ADC bot or mid-lane player). League of Legends (LoL) is a highly competitive esport with a global fanbase, featuring professional teams battling across various leagues and tournaments. Each role within a team has a distinct responsibility, but two of the most crucial damage-dealing roles are ADC (Attack Damage Carry) and Mid Laner. These roles often dictate the outcome of fights and matches, making their performance a key aspect of a team's success.
 One of the most important metrics in evaluating a player's impact is damage per minute per deaths + 1 (DPM / (Deaths + 1)), which adjusts raw damage output by factoring in survivability. This statistic can help determine which role exerts more influence in professional play.
 Our central question is:
@@ -38,7 +36,6 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 </p>
 	<p> The dataset contains 97,980 rows after filtering out team summary data, focusing solely on individual player statistics. Below are the key columns relevant to our analysis:
 </p>
-</body>
 	<ul>
 	    <li>gameid:  A unique identifier for each match played.</li>
 	    <li>position: The role played by an individual player within their team composition. The roles include top, jungle, mid, bot(ADC), and support.</li>
@@ -52,7 +49,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	</ul>
 <body>
     <div>
-        <h3>Step 2: Data Cleaning and Exploratory Data Analysis</h3>
+        <h3>Data Cleaning and Exploratory Data Analysis</h3>
         <h4>Data Cleaning</h4>
         <p>We first only keep the relevant columns: <code>gameid</code>, <code>position</code>, <code>dpm</code>, <code>kills</code>, <code>deaths</code>, <code>assists</code>, <code>result</code>, <code>league</code>, <code>effectiveness</code>. In this dataset, each game has 12 rows, with 10 rows representing each of the players and 2 rows for summarizing the overall team performance and result (i.e. team summary rows). We removed the 2 rows for each game that summarized the overall team performance, which brought the initial number of rows from 117,576 to 97,980. We then dropped all the rows that had missing values and found out that it was the same as without dropping, so our data doesn't have any rows with missing data.</p>
 		<p>Below is the head of our league_clean dataframe.</p>
@@ -76,7 +73,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
     </div>
 </body>
 	<div>
-		<h3>Step 3: Assessment of Missingness</h3>
+		<h3>Assessment of Missingness</h3>
 	</div>
 	<div>
 		<p><b>playername</b>: MD (Missing by Design)</p>
@@ -94,23 +91,20 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<p>We conclude our assessment of missingness analysis by stating that <b>among our relevant columns</b> we found no column that has null values, therefore it is impossible to find any columns that are <b>NMAR</b> and/or <b>MAR</b>.</p>
 	</div>
 	<div>
-		<h3>Step 4: Hypothesis Testing</h3>
+		<h3>Hypothesis Testing</h3>
 	</div>	
 	<div>
 		<h4><b>Null Hypothesis</b><h4>
-	</div>
 	<div>
 		<p>The mean carry potential (measured as Damage Per Minute / (Deaths + 1)) is the same for mid-lane and ADC (bot-lane) players.</p>
 	</div>
 	<div>
 		<h4><b>Alternative Hypothesis</b></h4>
-	</div>
 	<div>
 		<p>The mean carry potential is higher for mid-lane players than for ADC players.</p>
 	</div>
 	<div>
 		<h4><b>Test Statistic</b><h4>
-	</div>
 	<div>
 		<p>The test statistic will be the <u>observed difference</u> in means of carry potential between mid-lane and ADC players.</p>
 	</div>
@@ -139,7 +133,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<p>Based on the hypothesis test performed, with a p-value of 1.000, we fail to reject the null hypothesis. This suggests that the observed difference in carry potential is entirely consistent with what we would expect under random chance. The histogram shows that the observed difference in means (-14.761) lies well within the range of the permuted distribution, meaning there is no statistical evidence to suggest that mid-lane players have a higher mean carry potential than ADC players. This result implies that the differences in carry potential between these roles may be due to normal game variations rather than an inherent positional advantage.</p>
 	</div>
 	<div>
-		<h3>Step 5: Framing a Prediction Problem</h3>
+		<h3>Framing a Prediction Problem</h3>
 	</div>
 	<div>
 		<p><b><u>Prediction Problem</u></b>: We want to identify the role of the player given their post-game data. This will imply for us to do a <u>classification model</u>.</p>	
@@ -149,7 +143,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<p><b><u>Standard Metric</u></b>: We will be using prediction accuracy as our standard metric. The purpose of this is to assess how accurate our model is in predicting position of players given their match performance statistics. This would lead for players in future matches to have a proportional level of confidence (to classification accuracy) in expected behavior of given position players.</p>
 	</div>
 	<div>
-		<h3>Step 6: Baseline Model</h3>
+		<h3>Baseline Model</h3>
 	</div>
 	<div>
 		<p>For the baseline model, we used a <b>Random Forest Classifier</b>, with the following six features: <b>kills, deaths, dpm_per_death, teamkills, monsterkills, and minionkills</b>.</p>
@@ -195,7 +189,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	<iframe src="assets/classification_report.html" width="100%" height="400px"></iframe>
 	<p>Our model achieved an overall accuracy of 67.53%, with varying performance across different roles. The highest precision, recall, and F1-score were observed for the jng (jungle) role, achieving a perfect score of 1.00, indicating that the model identified jungle players with complete accuracy. Similarly, the sup (support) role performed well, with an F1-score of 0.96, suggesting strong classification ability. However, performance was lower for bot (bottom), mid (middle), and top (top lane) roles, with F1-scores ranging from 0.40 to 0.53, indicating greater misclassification in these categories. The macro and weighted averages align closely with overall accuracy, reinforcing that while the model performs well on some roles, it struggles with others, particularly mid and bot.</p>
 	</div>
-		<h3>Step 7: Final Model</h3>
+		<h3>Final Model</h3>
 		<p>In our final model, we added three new features: kill participation and gold efficiency, along with including wards placed as a feature. We introduced these features because they provide valuable insights into a player's role in the game. Kill participation captures how involved a player is in team fights by measuring the proportion of team kills they contributed to through kills or assists. This is particularly important for differentiating between roles like support, which has high assist numbers, and jungle, which is heavily involved in team fights. Gold efficiency was introduced to reflect how effectively a player converts earned gold into performance while penalizing deaths. This is useful for distinguishing between roles like bot lane carry, which aims for high gold efficiency, and mid, which may take more risks for solo plays. Additionally, wards placed was incorporated to help separate mid and support roles, as supports typically place more wards than other positions.</p>
     	<p>Our final model continues to use a Random Forest Classifier, consistent with our baseline model. Since all of our newly added features are numerical, we applied a StandardScaler transformation to ensure fair weighting. We then used GridSearchCV with a 5-fold cross-validation to optimize three key hyperparameters:</p>
     <ul>
@@ -219,10 +213,9 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
   frameborder="0"
 ></iframe>
     <p>The confusion matrix highlights that most misclassifications still occur between bot and mid lanes. Despite these challenges, the improved feature engineering and hyperparameter tuning resulted in a more robust classification model.</p>
-</body>
 <body>
 	<div>
-		<h3>Step 8: Fairness Analysis</h3>
+		<h3>Fairness Analysis</h3>
 	</div>
 	<div>
 		<p>Since our model is doing a multi-class classifier predicting the five categories, we see that it has done a good job on identifying <code>'jng'</code> and <code>'sup'</code> but is inconsistent with <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> player types. Considering this nature we can form a permutation test to identify any formal bias towards roles that are easier to predict such as <code>'jng'</code> and <code>'sup'</code>, we will separate the position types in two groups:</p>
@@ -421,6 +414,5 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 
 		<h4>Permutation Conclusion</h4>
 	 	<p>After running the code displayed above we have accumulated a p-value of <b>0.0</b>. Therefore we have <b>strong evidence</b> that the accuracy is <u>heavily</u> biased towards the higher performing group (or Group 1). This would make sense as <code>'bot'</code>, <code>'mid'</code>, and <code>'top'</code> have very similar match performance statistics.
- 	</div>
-</body>
+ 	
 
