@@ -156,6 +156,7 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<p><b><u>Response Variable</u></b>: since we are figuring the position of the player with the given player's match statistics, the response variable is <b><u>position</u></b>.</p>
 		<p><b><u>Motivation</u></b>: The motivation behind this is to identify the patterns, statistics, strengths, weaknesses, and behaviors of distinct player positions. By using match performance statistics, we can inform people as to how different kind of players behave in the match (i.e. suppose a player is type 1, then we would be able to have a solid understanding of the player's skills and preferences such as firstblood count or damage per minute or even player location patterns). In here we are prioritizing previous match statistics and outcomes to predict future matches where the players have known positions (reverse causality).</p>
 		<p><b><u>Standard Metric</u></b>: We will be using prediction accuracy as our standard metric. The purpose of this is to assess how accurate our model is in predicting position of players given their match performance statistics. This would lead for players in future matches to have a proportional level of confidence (to classification accuracy) in expected behavior of given position players.</p>
+		<p>This model will be trained on <b>80%</b> of the total dataset and will be tested on the remaining <b>20%</b> of the total dataset.</p>
 	</div>
 	<div>
 		<h3>Baseline Model</h3>
