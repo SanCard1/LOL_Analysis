@@ -39,7 +39,7 @@
 <body>
     <div class="container">
 	<h3>Description</h3>
-        <p>League of Legends (LoL) is a highly competitive esport with a global fanbase, featuring professional teams battling across various leagues and tournaments. Each role within a team has a distinct responsibility, but two of the most crucial damage-dealing roles are ADC (Attack Damage Carry) and Mid Laner. These roles often dictate the outcome of fights and matches, making their performance a key aspect of a team's success.
+        <p>League of Legends (LoL) is a highly competitive esport with a global fanbase, featuring professional teams battling across various leagues and tournaments. Each role within a team has a distinct responsibility, but two of the most crucial damage-dealing roles are ADC (Attack Damage Carry) and Mid Laner. These roles often dictate the outcome of fights and matches, making their performance a key aspect of a team's success. The data set we are using is a professional data set that’s developed by Oracle’s Elixir. We are using the 2024 data and it includes key performance metrics such as damage per minute, kills, assists, deaths, and game results which enable various statistical analyses.
 One of the most important metrics in evaluating a player's impact is damage per minute per deaths + 1 (DPM / (Deaths + 1)), which adjusts raw damage output by factoring in survivability. This statistic can help determine which role exerts more influence in professional play.
 Our central question is:
 Which role—ADCs or Mid Laners—carries their team more often based on DPM / (Deaths + 1)?
