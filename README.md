@@ -63,6 +63,14 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
         <p>We first only keep the relevant columns: <code>gameid</code>, <code>position</code>, <code>dpm</code>, <code>kills</code>, <code>deaths</code>, <code>assists</code>, <code>result</code>, <code>league</code>, <code>effectiveness</code>. In this dataset, each game has 12 rows, with 10 rows representing each of the players and 2 rows for summarizing the overall team performance and result (i.e. team summary rows). We removed the 2 rows for each game that summarized the overall team performance, which brought the initial number of rows from 117,576 to 97,980. We then dropped all the rows that had missing values and found out that it was the same as without dropping, so our data doesn't have any rows with missing data.</p>
 		<p>Below is the head of our league_clean dataframe.</p>
 		<iframe src="assets/lol_aggregates.html" width="100%" height="300px"></iframe>
+        <h2>League of Legends Data Cleaned</h2>
+        | gameid             | position   |     dpm |   kills |   deaths |   assists |   result | league   |   effectiveness |
+|:-------------------|:-----------|--------:|--------:|---------:|----------:|---------:|:---------|----------------:|
+| 10660-10660_game_1 | top        | 225.62  |       1 |        3 |         1 |        0 | DCup     |         56.4051 |
+| 10660-10660_game_1 | jng        | 234.178 |       0 |        4 |         3 |        0 | DCup     |         46.8356 |
+| 10660-10660_game_1 | mid        | 318.293 |       0 |        2 |         0 |        0 | DCup     |        106.098  |
+| 10660-10660_game_1 | bot        | 346.511 |       2 |        4 |         0 |        0 | DCup     |         69.3022 |
+| 10660-10660_game_1 | sup        | 205.228 |       0 |        3 |         3 |        0 | DCup     |         51.307  |
         <h3>Univariate Analysis</h3>
 		<iframe
   src="assets/dpm_distribution.html"
