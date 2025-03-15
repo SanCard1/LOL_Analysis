@@ -39,7 +39,7 @@
 <body>
     <div class="container">
 	<h3>Description</h3>
-        <p>League of Legends (LoL) is a highly competitive esport with a global fanbase, featuring professional teams battling across various leagues and tournaments. Each role within a team has a distinct responsibility, but two of the most crucial damage-dealing roles are ADC (Attack Damage Carry) and Mid Laner. These roles often dictate the outcome of fights and matches, making their performance a key aspect of a team's success.
+        <p>League of Legends (LoL) is a highly competitive esport with a global fanbase, featuring professional teams battling across various leagues and tournaments. Each role within a team has a distinct responsibility, but two of the most crucial damage-dealing roles are ADC (Attack Damage Carry) and Mid Laner. These roles often dictate the outcome of fights and matches, making their performance a key aspect of a team's success. The data set we are using is a professional data set that’s developed by Oracle’s Elixir. We are using the 2024 data and it includes key performance metrics such as damage per minute, kills, assists, deaths, and game results which enable various statistical analyses.
 One of the most important metrics in evaluating a player's impact is damage per minute per deaths + 1 (DPM / (Deaths + 1)), which adjusts raw damage output by factoring in survivability. This statistic can help determine which role exerts more influence in professional play.
 Our central question is:
 Which role—ADCs or Mid Laners—carries their team more often based on DPM / (Deaths + 1)?
@@ -89,17 +89,17 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	<div>
 		<h3>Assessment of Missingness</h3>
 	</div>
-	<div>
-		<p><b>playername</b>: MD (Missing by Design)</p>
+	<div>	
+		<h5>NMAR Analysis</h5>
+		<p>In our data, we believe the column "split" is Not Missing At Random (NMAR). Looking into this column, we see that the missing values do not follow a specific trend or show clear dependence on other columns. In the actual League of Legends esports dataset, the "split" information represents different stages of the season (e.g., Spring Split, Summer Split). The missing values in this column likely occur because certain matches were not officially categorized into a split, such as special events, exhibition matches, or games from less-documented tournaments. This suggests that the missingness is influenced by an external factor—the way tournaments or data sources recorded the matches—rather than by the data itself.
+
+An additional data point we would obtain to make this column Missing At Random (MAR) is "tournament_type", which could indicate whether a match was part of a regular split or a separate event. If all missing values correspond to a specific tournament type, then the missingness would be MAR rather than NMAR.</p>
+		<p><b>playername</b>: MAR (Missing at Random)</p>
 		<ul>
-			<li><b>playername</b> is missing by design since you can take a look at the <b>position</b> column and if you see the value "team" then you can predict with certainty that the <b>playername</b> value is going to be null.</li>
+			<li><b>playername</b> is missing at random since there is a relationship being seen from our permutation test that missing data on <b>playername</b> does lead to lower <b>opp_killsat25</b>. Refer to our permutation test below:</li>
 		</ul>
 	</div>
 	<div>
-		<p><b>playerid</b>: MD (Missing by Design)</p>
-		<ul>
-			<li><b>playerid</b> is missing by design since you can take a look at the <b>playername</b> column and if you see a null value then you can predict with certainty that the <b>playerid</b> value is going to be null.</li>
-		</ul>
         <iframe
   src="assets/custom_pie_playername.html"
   width="800"
