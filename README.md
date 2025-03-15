@@ -89,7 +89,8 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 	<div>
 		<h3>Assessment of Missingness</h3>
 	</div>
-	<div>	<h5>NMAR Analysis</h2>
+	<div>	
+		<h5>NMAR Analysis</h5>
 		<p>In our data, we believe the column "split" is Not Missing At Random (NMAR). Looking into this column, we see that the missing values do not follow a specific trend or show clear dependence on other columns. In the actual League of Legends esports dataset, the "split" information represents different stages of the season (e.g., Spring Split, Summer Split). The missing values in this column likely occur because certain matches were not officially categorized into a split, such as special events, exhibition matches, or games from less-documented tournaments. This suggests that the missingness is influenced by an external factor—the way tournaments or data sources recorded the matches—rather than by the data itself.
 
 An additional data point we would obtain to make this column Missing At Random (MAR) is "tournament_type", which could indicate whether a match was part of a regular split or a separate event. If all missing values correspond to a specific tournament type, then the missingness would be MAR rather than NMAR.</p>
