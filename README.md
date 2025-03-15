@@ -114,7 +114,7 @@ An additional data point we would obtain to make this column Missing At Random (
 ></iframe>
 	</div>
 	<div>
-		<p>We conclude our assessment of missingness analysis by stating that <b>among our relevant columns</b> we found no column that has null values, therefore it is impossible to find any columns that are <b>NMAR</b> and/or <b>MAR</b>.</p>
+		<p>We've discovered a strong relationship between missing <b>playername</b> values and the <b>opp_killsat25</b> statistic. Specifically, when a player's name is not recorded, their <b>opp_killsat25</b> value is very likely to be low. This pattern is a statistically significant finding.</p>
 	</div>
 	<div>
 		<h3>Hypothesis Testing</h3>
