@@ -97,7 +97,10 @@ An additional data point we would obtain to make this column Missing At Random (
 		<p><b>playername</b>: MAR (Missing at Random)</p>
 		<ul>
 			<li><b>playername</b> is missing at random since there is a relationship being seen from our permutation test that missing data on <b>playername</b> does lead to lower <b>opp_killsat25</b>. Refer to our permutation test below:</li>
-		</ul>
+		<li><b>Null Hypothesis</b>: There is no statistical significance between missing and non-missing <code>playername</code> values onto the <code>opp_killsat25</code> data.</li>
+      		<li><b>Alternative Hypothesis</b>: There <b>is</b> statistical significance between missing and non-missing <code>playername</code> values onto the <code>opp_killsat25</code> data.</li>
+	 	<li><b>p-Value and Observed Statistic</b>: We will be setting our p-value to be <b>0.05</b> and the Observed Statistic will be a difference in means of 7.12.</li>
+   		</ul>
 	</div>
 	<div>
         <iframe
@@ -114,7 +117,7 @@ An additional data point we would obtain to make this column Missing At Random (
 ></iframe>
 	</div>
 	<div>
-		<p>We've discovered a strong relationship between missing <b>playername</b> values and the <b>opp_killsat25</b> statistic. Specifically, when a player's name is not recorded, their <b>opp_killsat25</b> value is very likely to be low. This pattern is a statistically significant finding.</p>
+		<p>We've discovered a strong relationship between missing <b>playername</b> values and the <b>opp_killsat25</b> statistic. Specifically, when a player's name is not recorded, their <b>opp_killsat25</b> value is very likely to be low. This pattern is a statistically significant finding where p-value is <b>0.0</b>, hence <b>we reject the null</b></p>
 	</div>
 	<div>
 		<h3>Hypothesis Testing</h3>
