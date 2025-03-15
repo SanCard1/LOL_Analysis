@@ -93,16 +93,12 @@ By analyzing professional match data, we aim to uncover whether ADCs or Mid Lane
 		<p>In our data, we believe the column "split" is Not Missing At Random (NMAR). Looking into this column, we see that the missing values do not follow a specific trend or show clear dependence on other columns. In the actual League of Legends esports dataset, the "split" information represents different stages of the season (e.g., Spring Split, Summer Split). The missing values in this column likely occur because certain matches were not officially categorized into a split, such as special events, exhibition matches, or games from less-documented tournaments. This suggests that the missingness is influenced by an external factor—the way tournaments or data sources recorded the matches—rather than by the data itself.
 
 An additional data point we would obtain to make this column Missing At Random (MAR) is "tournament_type", which could indicate whether a match was part of a regular split or a separate event. If all missing values correspond to a specific tournament type, then the missingness would be MAR rather than NMAR.</p>
-		<p><b>playername</b>: MD (Missing by Design)</p>
+		<p><b>playername</b>: MAR (Missing at Random)</p>
 		<ul>
-			<li><b>playername</b> is missing by design since you can take a look at the <b>position</b> column and if you see the value "team" then you can predict with certainty that the <b>playername</b> value is going to be null.</li>
+			<li><b>playername</b> is missing at random since there is a relationship being seen from our permutation test that missing data on <b>playername</b> does lead to lower <b>opp_killsat25</b>. Refer to our permutation test below:</li>
 		</ul>
 	</div>
 	<div>
-		<p><b>playerid</b>: MD (Missing by Design)</p>
-		<ul>
-			<li><b>playerid</b> is missing by design since you can take a look at the <b>playername</b> column and if you see a null value then you can predict with certainty that the <b>playerid</b> value is going to be null.</li>
-		</ul>
         <iframe
   src="assets/custom_pie_playername.html"
   width="800"
