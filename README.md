@@ -101,13 +101,13 @@ An additional data point we would obtain to make this column Missing At Random (
 	</div>
 	<div>
         <iframe
-  src="assets/custom_pie_playername.html"
+  src="assets/missing_permutation.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 <iframe
-  src="assets/custom_pie_playerid.html"
+  src="assets/distribution_missing.html"
   width="800"
   height="600"
   frameborder="0"
