@@ -100,7 +100,7 @@ An additional data point we would obtain to make this column Missing At Random (
 			<li><b>playername</b> is missing at random since there is a relationship being seen from our permutation test that missing data on <b>playername</b> does lead to lower <b>opp_killsat25</b>. Refer to our permutation test below:</li>
 		<li><b>Null Hypothesis</b>: There is no statistical significance between missing and non-missing <code>playername</code> values onto the <code>opp_killsat25</code> data.</li>
       		<li><b>Alternative Hypothesis</b>: There <b>is</b> statistical significance between missing and non-missing <code>playername</code> values onto the <code>opp_killsat25</code> data.</li>
-	 	<li><b>p-Value and Observed Statistic</b>: We will be setting our p-value to be <b>0.05</b> and the Observed Statistic will be a difference in means of 7.12.</li>
+	 	<li><b>p-Value and Observed Statistic</b>: We will be setting our p-value threshold to be <b>0.05</b> and the Observed Statistic we find is a difference in means of 7.12.</li>
    		</ul>
 	</div>
 	<div>
